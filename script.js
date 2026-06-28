@@ -27,14 +27,37 @@ const observer = new IntersectionObserver(entries => {
 
 sections.forEach(s => observer.observe(s));
 
-// Contact form — feedback visual simples
+// Contact form — envia via Formspree
 const form = document.getElementById('contactForm');
 const note = document.getElementById('formNote');
 
-form?.addEventListener('submit', e => {
+form?.addEventListener('submit', async e => {
   e.preventDefault();
-  note.textContent = 'Mensagem enviada! Entrarei em contato em breve.';
-  note.style.color = '#4f46e5';
-  form.reset();
+  const btn = form.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.textContent = 'Enviando...';
+
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+      note.textContent = 'Mensagem enviada! Entrarei em contato em breve.';
+      note.style.color = '#10b981';
+      form.reset();
+    } else {
+      note.textContent = 'Erro ao enviar. Tente novamente.';
+      note.style.color = '#ef4444';
+    }
+  } catch {
+    note.textContent = 'Erro de conexão. Tente novamente.';
+    note.style.color = '#ef4444';
+  }
+
+  btn.disabled = false;
+  btn.textContent = 'Enviar mensagem';
   setTimeout(() => { note.textContent = ''; }, 5000);
 });
