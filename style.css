@@ -198,6 +198,13 @@ body {
   letter-spacing: 0.05em;
 }
 
+.avatar-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 @keyframes pulse {
   0%, 100% { box-shadow: 0 0 0 0 rgba(79,70,229,0.2); }
   50% { box-shadow: 0 0 0 16px rgba(79,70,229,0); }
