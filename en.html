@@ -157,155 +157,143 @@
     <!-- PROJECTS -->
     <section class="section" id="projects">
       <div class="container">
-        <h2 class="section-title">Projects</h2>
-        <div class="project-featured">
-          <div class="project-info">
-            <span class="project-badge">Featured Project</span>
-            <h3 class="project-name">Find Your Own</h3>
-            <p class="project-desc">
-              A personal development gamification app where users level up by completing daily and weekly missions.
-              Each mission grants XP and attribute points, allowing the character to gain levels and unlock titles —
-              turning real habits into visible progress.
-            </p>
-            <div class="project-features">
-              <div class="project-feature">
-                <span class="project-feature-icon">⚔️</span>
-                <div>
-                  <strong>Mission System</strong>
-                  <p>Daily, weekly and custom missions with XP rewards</p>
-                </div>
-              </div>
-              <div class="project-feature">
-                <span class="project-feature-icon">📈</span>
-                <div>
-                  <strong>5 Attributes</strong>
-                  <p>Health · Knowledge · Discipline · Social · Finance — each with its own level</p>
-                </div>
-              </div>
-              <div class="project-feature">
-                <span class="project-feature-icon">🏆</span>
-                <div>
-                  <strong>Progression & Titles</strong>
-                  <p>XP leveling system, daily streak and titles like Apprentice, Veteran and Legend</p>
-                </div>
-              </div>
-              <div class="project-feature">
-                <span class="project-feature-icon">🔐</span>
-                <div>
-                  <strong>Auth & Database</strong>
-                  <p>Authentication and persistence with Supabase, real-time data per user</p>
-                </div>
-              </div>
-            </div>
-            <div class="project-stack">
-              <span class="tag tag-primary">Next.js</span>
-              <span class="tag tag-primary">TypeScript</span>
-              <span class="tag">Supabase</span>
-              <span class="tag">shadcn/ui</span>
-              <span class="tag">Tailwind CSS</span>
-            </div>
+        <div class="carousel-header">
+          <h2 class="section-title">Projects</h2>
+          <div class="carousel-controls">
+            <button class="carousel-btn" id="prevBtn" aria-label="Previous">&#8592;</button>
+            <div class="carousel-dots" id="carouselDots"></div>
+            <button class="carousel-btn" id="nextBtn" aria-label="Next">&#8594;</button>
           </div>
-          <div class="project-preview" aria-hidden="true">
-            <div class="app-mockup">
-              <div class="mockup-header">
-                <span class="mockup-dot red"></span>
-                <span class="mockup-dot yellow"></span>
-                <span class="mockup-dot green"></span>
-                <span class="mockup-title">Find Your Own</span>
-              </div>
-              <div class="mockup-body">
-                <div class="mockup-profile">
-                  <div class="mockup-avatar">MS</div>
-                  <div>
-                    <div class="mockup-name">Mauro Souza</div>
-                    <div class="mockup-level">Level 7 · Apprentice</div>
+        </div>
+
+        <div class="carousel-wrapper">
+          <div class="carousel-track" id="carouselTrack">
+
+            <!-- SLIDE 1: Find Your Own -->
+            <div class="carousel-slide">
+              <div class="project-featured">
+                <div class="project-info">
+                  <span class="project-badge">Featured Project</span>
+                  <h3 class="project-name">Find Your Own</h3>
+                  <p class="project-desc">
+                    A personal development gamification app where users level up by completing daily and weekly missions.
+                    Each mission grants XP and attribute points, allowing the character to gain levels and unlock titles —
+                    turning real habits into visible progress.
+                  </p>
+                  <div class="project-features">
+                    <div class="project-feature">
+                      <span class="project-feature-icon">⚔️</span>
+                      <div><strong>Mission System</strong><p>Daily, weekly and custom missions with XP rewards</p></div>
+                    </div>
+                    <div class="project-feature">
+                      <span class="project-feature-icon">📈</span>
+                      <div><strong>5 Attributes</strong><p>Health · Knowledge · Discipline · Social · Finance — each with its own level</p></div>
+                    </div>
+                    <div class="project-feature">
+                      <span class="project-feature-icon">🏆</span>
+                      <div><strong>Progression & Titles</strong><p>XP leveling system, daily streak and titles like Apprentice, Veteran and Legend</p></div>
+                    </div>
+                    <div class="project-feature">
+                      <span class="project-feature-icon">🔐</span>
+                      <div><strong>Auth & Database</strong><p>Authentication and persistence with Supabase, real-time data per user</p></div>
+                    </div>
+                  </div>
+                  <div class="project-stack">
+                    <span class="tag tag-primary">Next.js</span>
+                    <span class="tag tag-primary">TypeScript</span>
+                    <span class="tag">Supabase</span>
+                    <span class="tag">shadcn/ui</span>
+                    <span class="tag">Tailwind CSS</span>
                   </div>
                 </div>
-                <div class="mockup-xp-bar">
-                  <div class="mockup-xp-fill"></div>
-                </div>
-                <div class="mockup-xp-label">420 / 700 XP</div>
-                <div class="mockup-section-title">Today's missions</div>
-                <div class="mockup-mission done">
-                  <span class="mockup-mission-icon">🧠</span>
-                  <span class="mockup-mission-text">Study 30 minutes</span>
-                  <span class="mockup-check">✓</span>
-                </div>
-                <div class="mockup-mission done">
-                  <span class="mockup-mission-icon">💪</span>
-                  <span class="mockup-mission-text">Physical exercise</span>
-                  <span class="mockup-check">✓</span>
-                </div>
-                <div class="mockup-mission">
-                  <span class="mockup-mission-icon">💰</span>
-                  <span class="mockup-mission-text">Track expenses</span>
-                  <span class="mockup-check-empty"></span>
-                </div>
-                <div class="mockup-attrs">
-                  <div class="mockup-attr">
-                    <span>🧠</span>
-                    <div class="mockup-attr-bar"><div class="mockup-attr-fill knowledge"></div></div>
-                  </div>
-                  <div class="mockup-attr">
-                    <span>❤️</span>
-                    <div class="mockup-attr-bar"><div class="mockup-attr-fill health"></div></div>
-                  </div>
-                  <div class="mockup-attr">
-                    <span>🎯</span>
-                    <div class="mockup-attr-bar"><div class="mockup-attr-fill discipline"></div></div>
+                <div class="project-preview" aria-hidden="true">
+                  <div class="app-mockup">
+                    <div class="mockup-header">
+                      <span class="mockup-dot red"></span><span class="mockup-dot yellow"></span><span class="mockup-dot green"></span>
+                      <span class="mockup-title">Find Your Own</span>
+                    </div>
+                    <div class="mockup-body">
+                      <div class="mockup-profile">
+                        <div class="mockup-avatar">MS</div>
+                        <div><div class="mockup-name">Mauro Souza</div><div class="mockup-level">Level 7 · Apprentice</div></div>
+                      </div>
+                      <div class="mockup-xp-bar"><div class="mockup-xp-fill"></div></div>
+                      <div class="mockup-xp-label">420 / 700 XP</div>
+                      <div class="mockup-section-title">Today's missions</div>
+                      <div class="mockup-mission done"><span class="mockup-mission-icon">🧠</span><span class="mockup-mission-text">Study 30 minutes</span><span class="mockup-check">✓</span></div>
+                      <div class="mockup-mission done"><span class="mockup-mission-icon">💪</span><span class="mockup-mission-text">Physical exercise</span><span class="mockup-check">✓</span></div>
+                      <div class="mockup-mission"><span class="mockup-mission-icon">💰</span><span class="mockup-mission-text">Track expenses</span><span class="mockup-check-empty"></span></div>
+                      <div class="mockup-attrs">
+                        <div class="mockup-attr"><span>🧠</span><div class="mockup-attr-bar"><div class="mockup-attr-fill knowledge"></div></div></div>
+                        <div class="mockup-attr"><span>❤️</span><div class="mockup-attr-bar"><div class="mockup-attr-fill health"></div></div></div>
+                        <div class="mockup-attr"><span>🎯</span><div class="mockup-attr-bar"><div class="mockup-attr-fill discipline"></div></div></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        <div class="project-card-secondary">
-          <div class="project-card-header">
-            <div>
-              <span class="project-badge">Discord Bot</span>
-              <h3 class="project-name" style="font-size:1.3rem;margin-top:0.5rem;">Custom Discord Bot</h3>
-            </div>
-          </div>
-          <p class="project-desc">
-            Full-featured Discord bot with multiple integrated systems — ticket support, anonymous mail,
-            custom booster roles and an XP leveling system based on messages and voice channel activity.
-            Built with Node.js and Discord.js v14.
-          </p>
-          <div class="project-features" style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
-            <div class="project-feature">
-              <span class="project-feature-icon">🎫</span>
-              <div>
-                <strong>Ticket System</strong>
-                <p>Panel with private channels, automatic permissions and full logs</p>
+
+            <!-- SLIDE 2: Discord Bot -->
+            <div class="carousel-slide">
+              <div class="project-featured">
+                <div class="project-info">
+                  <span class="project-badge">Discord Bot</span>
+                  <h3 class="project-name">Custom Discord Bot</h3>
+                  <p class="project-desc">
+                    Full-featured Discord bot with multiple integrated systems — ticket support, anonymous mail,
+                    custom booster roles and an XP leveling system based on messages and voice channel activity.
+                    Built with Node.js and Discord.js v14.
+                  </p>
+                  <div class="project-features">
+                    <div class="project-feature">
+                      <span class="project-feature-icon">🎫</span>
+                      <div><strong>Ticket System</strong><p>Panel with private channels, automatic permissions and full logs</p></div>
+                    </div>
+                    <div class="project-feature">
+                      <span class="project-feature-icon">✉️</span>
+                      <div><strong>Anonymous Mail</strong><p>Anonymous messages between users with security validations</p></div>
+                    </div>
+                    <div class="project-feature">
+                      <span class="project-feature-icon">⭐</span>
+                      <div><strong>Booster System</strong><p>Custom role with configurable name and color per booster</p></div>
+                    </div>
+                    <div class="project-feature">
+                      <span class="project-feature-icon">📊</span>
+                      <div><strong>Level System</strong><p>XP from messages and voice calls, leaderboard and automatic role rewards</p></div>
+                    </div>
+                  </div>
+                  <div class="project-stack">
+                    <span class="tag tag-primary">Node.js</span>
+                    <span class="tag tag-primary">Discord.js v14</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Log System</span>
+                    <span class="tag">Slash Commands</span>
+                  </div>
+                </div>
+                <div class="project-preview" aria-hidden="true">
+                  <div class="app-mockup">
+                    <div class="mockup-header">
+                      <span class="mockup-dot red"></span><span class="mockup-dot yellow"></span><span class="mockup-dot green"></span>
+                      <span class="mockup-title">Discord Bot</span>
+                    </div>
+                    <div class="mockup-body">
+                      <div class="mockup-section-title">Slash commands</div>
+                      <div class="mockup-mission done"><span class="mockup-mission-icon">🎫</span><span class="mockup-mission-text">/ticket panel</span><span class="mockup-check">✓</span></div>
+                      <div class="mockup-mission done"><span class="mockup-mission-icon">✉️</span><span class="mockup-mission-text">/mail</span><span class="mockup-check">✓</span></div>
+                      <div class="mockup-mission done"><span class="mockup-mission-icon">⭐</span><span class="mockup-mission-text">/booster</span><span class="mockup-check">✓</span></div>
+                      <div class="mockup-mission done"><span class="mockup-mission-icon">📊</span><span class="mockup-mission-text">/rank</span><span class="mockup-check">✓</span></div>
+                      <div class="mockup-mission done"><span class="mockup-mission-icon">🏆</span><span class="mockup-mission-text">/leaderboard</span><span class="mockup-check">✓</span></div>
+                      <div class="mockup-attrs" style="margin-top:10px;">
+                        <div class="mockup-attr"><span>📊</span><div class="mockup-attr-bar"><div class="mockup-attr-fill knowledge" style="width:85%"></div></div></div>
+                        <div class="mockup-attr"><span>🎯</span><div class="mockup-attr-bar"><div class="mockup-attr-fill discipline" style="width:60%"></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="project-feature">
-              <span class="project-feature-icon">✉️</span>
-              <div>
-                <strong>Anonymous Mail</strong>
-                <p>Anonymous messages between users with security validations</p>
-              </div>
-            </div>
-            <div class="project-feature">
-              <span class="project-feature-icon">⭐</span>
-              <div>
-                <strong>Booster System</strong>
-                <p>Custom role with configurable name and color per booster</p>
-              </div>
-            </div>
-            <div class="project-feature">
-              <span class="project-feature-icon">📊</span>
-              <div>
-                <strong>Level System</strong>
-                <p>XP from messages and voice calls, leaderboard and automatic role rewards</p>
-              </div>
-            </div>
-          </div>
-          <div class="project-stack" style="margin-top:1.25rem;">
-            <span class="tag tag-primary">Node.js</span>
-            <span class="tag tag-primary">Discord.js v14</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">Log System</span>
-            <span class="tag">Slash Commands</span>
+
           </div>
         </div>
       </div>

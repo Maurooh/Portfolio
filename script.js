@@ -1,3 +1,40 @@
+// Carousel
+function initCarousel() {
+  const track = document.getElementById('carouselTrack');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const dotsContainer = document.getElementById('carouselDots');
+  if (!track) return;
+
+  const slides = track.querySelectorAll('.carousel-slide');
+  let current = 0;
+
+  // Create dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  function goTo(index) {
+    current = index;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === slides.length - 1;
+  }
+
+  prevBtn.addEventListener('click', () => { if (current > 0) goTo(current - 1); });
+  nextBtn.addEventListener('click', () => { if (current < slides.length - 1) goTo(current + 1); });
+
+  goTo(0);
+}
+
+initCarousel();
+
 // Mobile nav toggle
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
