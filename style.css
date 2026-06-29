@@ -625,6 +625,27 @@ body {
   .app-mockup { max-width: 280px; }
 }
 
+/* ===== PROJECT SECONDARY CARD ===== */
+.project-card-secondary {
+  margin-top: 2.5rem;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.project-card-secondary:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .project-card-secondary .project-features {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 /* ===== TIMELINE ===== */
 .timeline {
   position: relative;
