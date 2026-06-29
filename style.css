@@ -915,6 +915,7 @@ body {
   .avatar-initials { font-size: 2.2rem; }
 
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .about-highlights { display: none; }
   .skills-groups { grid-template-columns: 1fr; gap: 2rem; }
   .form-row { grid-template-columns: 1fr; }
 }
