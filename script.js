@@ -18,17 +18,15 @@ function initCarousel() {
   });
 
   function goTo(index) {
-    current = index;
+    current = (index + slides.length) % slides.length;
     track.style.transform = `translateX(-${current * 100}%)`;
     dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => {
       d.classList.toggle('active', i === current);
     });
-    prevBtn.disabled = current === 0;
-    nextBtn.disabled = current === slides.length - 1;
   }
 
-  prevBtn.addEventListener('click', () => { if (current > 0) goTo(current - 1); });
-  nextBtn.addEventListener('click', () => { if (current < slides.length - 1) goTo(current + 1); });
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
 
   goTo(0);
 }
