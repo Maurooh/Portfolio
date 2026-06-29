@@ -693,19 +693,31 @@ body {
 .carousel-wrapper {
   overflow: hidden;
   width: 100%;
+  max-width: 100%;
+  display: block;
+  position: relative;
 }
 
 .carousel-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   width: 100%;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
 }
 
 .carousel-slide {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100%;
   flex: 0 0 100%;
   width: 100%;
+  max-width: 100%;
   min-width: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 /* ===== TIMELINE ===== */

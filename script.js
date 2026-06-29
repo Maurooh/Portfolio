@@ -33,7 +33,11 @@ function initCarousel() {
   goTo(0);
 }
 
-initCarousel();
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initCarousel);
+} else {
+  initCarousel();
+}
 
 // Mobile nav toggle
 const navToggle = document.querySelector('.nav-toggle');
