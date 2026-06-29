@@ -268,10 +268,11 @@ body {
 
 /* ===== ABOUT ===== */
 .about-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
   margin-top: 2.5rem;
+  align-items: start;
 }
 
 .about-text p {
@@ -283,25 +284,38 @@ body {
 .about-text strong { color: var(--color-text); }
 
 .about-highlights {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
 }
 
 .highlight-card {
   background: var(--color-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
-  padding: 1.25rem 1.5rem;
+  padding: 1.1rem 1.25rem;
   display: flex;
   gap: 1rem;
-  align-items: flex-start;
-  transition: box-shadow var(--transition), transform var(--transition);
+  align-items: center;
+  transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
 }
 
 .highlight-card:hover {
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 20px rgba(16,185,129,0.12);
   transform: translateY(-2px);
+  border-color: var(--color-accent);
+}
+
+.highlight-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent-light);
+  border-radius: 10px;
 }
 
 .highlight-icon {
@@ -900,7 +914,7 @@ body {
   .avatar-ring { width: 140px; height: 140px; }
   .avatar-initials { font-size: 2.2rem; }
 
-  .about-highlights { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
   .skills-groups { grid-template-columns: 1fr; gap: 2rem; }
   .form-row { grid-template-columns: 1fr; }
 }
