@@ -77,6 +77,25 @@ body {
 .nav-links a.active { color: var(--color-accent); }
 .nav-links a.active::after { transform: scaleX(1); }
 
+.lang-switch {
+  position: absolute;
+  right: 4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.lang-switch:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
 .nav-toggle {
   display: none;
   position: absolute;

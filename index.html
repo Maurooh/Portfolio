@@ -3,331 +3,157 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mauro Souza — Desenvolvedor</title>
+  <title>Mauro Souza — Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="Fotos/find-your-own-primary-180.png" />
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #0d0d14;
+      color: #e8e8f0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .lang-wrapper {
+      text-align: center;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .lang-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(16,185,129,0.12);
+      border: 2px solid #10b981;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #10b981;
+      margin: 0 auto 1.5rem;
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(16,185,129,0.2); }
+      50% { box-shadow: 0 0 0 14px rgba(16,185,129,0); }
+    }
+
+    .lang-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+    }
+
+    .lang-title {
+      font-size: 0.95rem;
+      color: #8888a8;
+      margin-bottom: 3rem;
+    }
+
+    .lang-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #8888a8;
+      margin-bottom: 1.25rem;
+    }
+
+    .lang-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .lang-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 2rem 1.5rem;
+      background: #16162a;
+      border: 1.5px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lang-card:hover {
+      border-color: #10b981;
+      background: rgba(16,185,129,0.06);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(16,185,129,0.15);
+    }
+
+    .lang-flag {
+      font-size: 2.5rem;
+      line-height: 1;
+    }
+
+    .lang-card-name {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .lang-card-sub {
+      font-size: 0.8rem;
+      color: #8888a8;
+    }
+
+    .lang-card-arrow {
+      font-size: 0.8rem;
+      color: #10b981;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .lang-card:hover .lang-card-arrow {
+      opacity: 1;
+    }
+
+    @media (max-width: 420px) {
+      .lang-cards { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
+  <div class="lang-wrapper">
+    <div class="lang-avatar">MS</div>
+    <h1 class="lang-name">Mauro Souza</h1>
+    <p class="lang-title">Software Developer & Automation</p>
 
-  <!-- NAV -->
-  <header class="nav">
-    <span class="nav-logo">MS</span>
-    <nav class="nav-links">
-      <a href="#sobre">Sobre</a>
-      <a href="#habilidades">Habilidades</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#formacao">Formação</a>
-      <a href="#contato">Contato</a>
-    </nav>
-    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
-  </header>
+    <p class="lang-label">Escolha o idioma / Choose a language</p>
 
-  <main>
-
-    <!-- HERO -->
-    <section class="hero" id="inicio">
-      <div class="hero-content">
-        <p class="hero-greeting">Olá, eu sou</p>
-        <h1 class="hero-name">Mauro Souza</h1>
-        <h2 class="hero-title">Desenvolvedor de Software & Automação</h2>
-        <p class="hero-sub">
-          JavaScript · Node.js · Python · Soluções Web & Automações
-        </p>
-        <div class="hero-actions">
-          <a href="#contato" class="btn btn-primary">Entre em contato</a>
-          <a href="#sobre" class="btn btn-ghost">Saiba mais</a>
-        </div>
-      </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="avatar-ring">
-          <div class="avatar-initials">MS</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SOBRE -->
-    <section class="section" id="sobre">
-      <div class="container">
-        <h2 class="section-title">Sobre mim</h2>
-        <div class="about-grid">
-          <div class="about-text">
-            <p>
-              Sou formado em <strong>Análise e Desenvolvimento de Sistemas</strong>, com pós-graduação em
-              <strong>Gestão da Tecnologia da Informação</strong>. Sou apaixonado por tecnologia,
-              desenvolvimento de software e automação, sempre buscando criar soluções que tornem
-              processos mais eficientes e proporcionem uma melhor experiência aos usuários.
-            </p>
-            <p>
-              Atuo no desenvolvimento de sistemas, aplicações web, automações e soluções personalizadas —
-              com experiência em JavaScript, Node.js, HTML, CSS, Python, Flutter, SQL e bancos de dados,
-              além de integração com APIs e versionamento com Git.
-            </p>
-            <p>
-              Acredito que tecnologia vai além do código: ela deve <strong>resolver problemas reais</strong>.
-              Por isso, compreendo as necessidades de cada projeto para desenvolver soluções
-              eficientes, intuitivas e adaptadas aos objetivos de cada cliente.
-            </p>
-          </div>
-          <div class="about-highlights">
-            <div class="highlight-card">
-              <span class="highlight-icon">💻</span>
-              <h3>Desenvolvimento Web</h3>
-              <p>Aplicações web completas, do backend às interfaces, com foco em desempenho e usabilidade</p>
-            </div>
-            <div class="highlight-card">
-              <span class="highlight-icon">⚙️</span>
-              <h3>Automação</h3>
-              <p>Processos automatizados que economizam tempo e reduzem erros humanos</p>
-            </div>
-            <div class="highlight-card">
-              <span class="highlight-icon">🔗</span>
-              <h3>Integrações & APIs</h3>
-              <p>APIs REST, bancos de dados e serviços externos conectados de forma eficiente e segura</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- HABILIDADES -->
-    <section class="section section-alt" id="habilidades">
-      <div class="container">
-        <h2 class="section-title">Habilidades</h2>
-        <div class="skills-groups">
-
-          <div class="skill-group">
-            <h3 class="skill-group-title">Especialidade</h3>
-            <div class="skill-tags">
-              <span class="tag tag-primary">Node.js</span>
-              <span class="tag tag-primary">Discord.js</span>
-              <span class="tag tag-primary">JavaScript</span>
-              <span class="tag tag-primary">Bots Discord</span>
-            </div>
-          </div>
-
-          <div class="skill-group">
-            <h3 class="skill-group-title">Linguagens & Frontend</h3>
-            <div class="skill-tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">Python</span>
-              <span class="tag">Flutter</span>
-              <span class="tag">SQL</span>
-            </div>
-          </div>
-
-          <div class="skill-group">
-            <h3 class="skill-group-title">Infraestrutura & Ferramentas</h3>
-            <div class="skill-tags">
-              <span class="tag">APIs REST</span>
-              <span class="tag">Bancos de Dados</span>
-              <span class="tag">Git</span>
-              <span class="tag">Hospedagem</span>
-              <span class="tag">Versionamento</span>
-            </div>
-          </div>
-
-          <div class="skill-group">
-            <h3 class="skill-group-title">Funcionalidades de Bots</h3>
-            <div class="skill-tags">
-              <span class="tag">Sistema de Tickets</span>
-              <span class="tag">Moderação</span>
-              <span class="tag">Gerenciamento de Cargos</span>
-              <span class="tag">Economia</span>
-              <span class="tag">Registro de Logs</span>
-              <span class="tag">Painel Administrativo</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJETOS -->
-    <section class="section" id="projetos">
-      <div class="container">
-        <h2 class="section-title">Projetos</h2>
-        <div class="project-featured">
-          <div class="project-info">
-            <span class="project-badge">Projeto Principal</span>
-            <h3 class="project-name">Find Your Own</h3>
-            <p class="project-desc">
-              App de gamificação de desenvolvimento pessoal onde o usuário evolui através de missões diárias e semanais.
-              Cada missão concede XP e pontos de atributo, fazendo o personagem subir de nível e desbloquear títulos —
-              transformando hábitos reais em progresso visível.
-            </p>
-            <div class="project-features">
-              <div class="project-feature">
-                <span class="project-feature-icon">⚔️</span>
-                <div>
-                  <strong>Sistema de Missões</strong>
-                  <p>Missões diárias, semanais e personalizadas com recompensas de XP</p>
-                </div>
-              </div>
-              <div class="project-feature">
-                <span class="project-feature-icon">📈</span>
-                <div>
-                  <strong>5 Atributos</strong>
-                  <p>Saúde · Conhecimento · Disciplina · Social · Finanças — cada um com nível próprio</p>
-                </div>
-              </div>
-              <div class="project-feature">
-                <span class="project-feature-icon">🏆</span>
-                <div>
-                  <strong>Progressão & Títulos</strong>
-                  <p>Sistema de XP com curva de nível, streak diário e títulos como Aprendiz, Veterano e Lenda</p>
-                </div>
-              </div>
-              <div class="project-feature">
-                <span class="project-feature-icon">🔐</span>
-                <div>
-                  <strong>Auth & Banco de Dados</strong>
-                  <p>Autenticação e persistência com Supabase, dados em tempo real por usuário</p>
-                </div>
-              </div>
-            </div>
-            <div class="project-stack">
-              <span class="tag tag-primary">Next.js</span>
-              <span class="tag tag-primary">TypeScript</span>
-              <span class="tag">Supabase</span>
-              <span class="tag">shadcn/ui</span>
-              <span class="tag">Tailwind CSS</span>
-            </div>
-          </div>
-          <div class="project-preview" aria-hidden="true">
-            <div class="app-mockup">
-              <div class="mockup-header">
-                <span class="mockup-dot red"></span>
-                <span class="mockup-dot yellow"></span>
-                <span class="mockup-dot green"></span>
-                <span class="mockup-title">Find Your Own</span>
-              </div>
-              <div class="mockup-body">
-                <div class="mockup-profile">
-                  <div class="mockup-avatar">MS</div>
-                  <div>
-                    <div class="mockup-name">Mauro Souza</div>
-                    <div class="mockup-level">Nível 7 · Aprendiz</div>
-                  </div>
-                </div>
-                <div class="mockup-xp-bar">
-                  <div class="mockup-xp-fill"></div>
-                </div>
-                <div class="mockup-xp-label">420 / 700 XP</div>
-                <div class="mockup-section-title">Missões do dia</div>
-                <div class="mockup-mission done">
-                  <span class="mockup-mission-icon">🧠</span>
-                  <span class="mockup-mission-text">Estudar 30 minutos</span>
-                  <span class="mockup-check">✓</span>
-                </div>
-                <div class="mockup-mission done">
-                  <span class="mockup-mission-icon">💪</span>
-                  <span class="mockup-mission-text">Exercício físico</span>
-                  <span class="mockup-check">✓</span>
-                </div>
-                <div class="mockup-mission">
-                  <span class="mockup-mission-icon">💰</span>
-                  <span class="mockup-mission-text">Registrar gastos</span>
-                  <span class="mockup-check-empty"></span>
-                </div>
-                <div class="mockup-attrs">
-                  <div class="mockup-attr">
-                    <span>🧠</span>
-                    <div class="mockup-attr-bar"><div class="mockup-attr-fill knowledge"></div></div>
-                  </div>
-                  <div class="mockup-attr">
-                    <span>❤️</span>
-                    <div class="mockup-attr-bar"><div class="mockup-attr-fill health"></div></div>
-                  </div>
-                  <div class="mockup-attr">
-                    <span>🎯</span>
-                    <div class="mockup-attr-bar"><div class="mockup-attr-fill discipline"></div></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FORMAÇÃO -->
-    <section class="section" id="formacao">
-      <div class="container">
-        <h2 class="section-title">Formação Acadêmica</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-body">
-              <span class="timeline-badge">Pós-graduação</span>
-              <h3>Gestão da Tecnologia da Informação</h3>
-              <p>Especialização em gestão estratégica de TI, governança e tomada de decisão baseada em dados.</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-body">
-              <span class="timeline-badge">Graduação</span>
-              <h3>Análise e Desenvolvimento de Sistemas</h3>
-              <p>Formação técnica em desenvolvimento de software, estruturas de dados, banco de dados e engenharia de sistemas.</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-body">
-              <span class="timeline-badge">Ensino Médio</span>
-              <h3>Ensino Médio Completo</h3>
-              <p>Base educacional concluída.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTATO -->
-    <section class="section section-alt" id="contato">
-      <div class="container container-narrow">
-        <h2 class="section-title">Entre em contato</h2>
-        <p class="section-sub">
-          Tem um projeto em mente ou quer saber mais sobre o meu trabalho?
-          Fique à vontade para entrar em contato.
-        </p>
-        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mzdlgjjk" method="POST">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Nome</label>
-              <input type="text" id="name" name="name" placeholder="Seu nome" required />
-            </div>
-            <div class="form-group">
-              <label for="email">E-mail</label>
-              <input type="email" id="email" name="email" placeholder="seu@email.com" required />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="subject">Assunto</label>
-            <input type="text" id="subject" name="subject" placeholder="Sobre o que você quer falar?" required />
-          </div>
-          <div class="form-group">
-            <label for="message">Mensagem</label>
-            <textarea id="message" name="message" rows="5" placeholder="Descreva seu projeto ou dúvida..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-full">Enviar mensagem</button>
-          <p class="form-note" id="formNote"></p>
-        </form>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2026 Mauro Souza · Desenvolvedor de Software & Automação</p>
-    <p class="footer-sub">Feito com HTML, CSS e JavaScript</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <div class="lang-cards">
+      <a href="pt.html" class="lang-card">
+        <span class="lang-flag">🇧🇷</span>
+        <span class="lang-card-name">Português</span>
+        <span class="lang-card-sub">Versão em Português</span>
+        <span class="lang-card-arrow">Entrar →</span>
+      </a>
+      <a href="en.html" class="lang-card">
+        <span class="lang-flag">🇬🇧</span>
+        <span class="lang-card-name">English</span>
+        <span class="lang-card-sub">English Version</span>
+        <span class="lang-card-arrow">Enter →</span>
+      </a>
+    </div>
+  </div>
 </body>
 </html>
