@@ -268,11 +268,10 @@ body {
 
 /* ===== ABOUT ===== */
 .about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
   margin-top: 2.5rem;
-  align-items: start;
 }
 
 .about-text p {
@@ -284,8 +283,8 @@ body {
 .about-text strong { color: var(--color-text); }
 
 .about-highlights {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
@@ -901,7 +900,7 @@ body {
   .avatar-ring { width: 140px; height: 140px; }
   .avatar-initials { font-size: 2.2rem; }
 
-  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .about-highlights { grid-template-columns: 1fr; }
   .skills-groups { grid-template-columns: 1fr; gap: 2rem; }
   .form-row { grid-template-columns: 1fr; }
 }
