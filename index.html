@@ -1,162 +1,290 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mauro Souza — Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="Fotos/find-your-own-primary-180.png" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: #0d0d14;
-      color: #e8e8f0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .lang-wrapper {
-      text-align: center;
-      max-width: 600px;
-      width: 100%;
-    }
-
-    .lang-avatar {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: rgba(16,185,129,0.12);
-      border: 2px solid #10b981;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #10b981;
-      margin: 0 auto 1.5rem;
-      animation: pulse 3s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(16,185,129,0.2); }
-      50% { box-shadow: 0 0 0 14px rgba(16,185,129,0); }
-    }
-
-    .lang-name {
-      font-size: 1.75rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.4rem;
-    }
-
-    .lang-title {
-      font-size: 0.95rem;
-      color: #8888a8;
-      margin-bottom: 3rem;
-    }
-
-    .lang-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #8888a8;
-      margin-bottom: 1.25rem;
-    }
-
-    .lang-cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .lang-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 2rem 1.5rem;
-      background: #16162a;
-      border: 1.5px solid rgba(255,255,255,0.08);
-      border-radius: 16px;
-      text-decoration: none;
-      color: inherit;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .lang-card:hover {
-      border-color: #10b981;
-      background: rgba(16,185,129,0.06);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 32px rgba(16,185,129,0.15);
-    }
-
-    .lang-flag {
-      width: 64px;
-      height: 43px;
-      object-fit: cover;
-      border-radius: 6px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    }
-
-    .lang-card-name {
-      font-size: 1rem;
-      font-weight: 600;
-    }
-
-    .lang-card-sub {
-      font-size: 0.8rem;
-      color: #8888a8;
-    }
-
-    .lang-card-arrow {
-      font-size: 0.8rem;
-      color: #10b981;
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-
-    .lang-card:hover .lang-card-arrow {
-      opacity: 1;
-    }
-
-    @media (max-width: 420px) {
-      .lang-cards { grid-template-columns: 1fr; }
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mauro Souza - Desenvolvedor de Software</title>
+  <meta name="description" content="Portfólio de Mauro Souza: sites, sistemas web, bots para Discord, automações e IA. Criador do Seu Bot Pronto.">
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
-  <div class="lang-wrapper">
-    <div class="lang-avatar">MS</div>
-    <h1 class="lang-name">Mauro Souza</h1>
-    <p class="lang-title">Software Developer & Automation</p>
 
-    <p class="lang-label">Escolha o idioma / Choose a language</p>
-
-    <div class="lang-cards">
-      <a href="pt.html" class="lang-card">
-        <img class="lang-flag" src="https://flagcdn.com/w80/br.png" alt="Bandeira do Brasil" />
-        <span class="lang-card-name">Português</span>
-        <span class="lang-card-sub">Versão em Português</span>
-        <span class="lang-card-arrow">Entrar →</span>
-      </a>
-      <a href="en.html" class="lang-card">
-        <img class="lang-flag" src="https://flagcdn.com/w80/gb.png" alt="UK Flag" />
-        <span class="lang-card-name">English</span>
-        <span class="lang-card-sub">English Version</span>
-        <span class="lang-card-arrow">Enter →</span>
-      </a>
+  <!-- Barra de aviso -->
+  <div class="announce" id="announce">
+    <div class="announce__inner">
+      <i class="announce__dot"></i>
+      <span>Projeto em destaque: Seu Bot Pronto</span>
+      <span class="hide-sm">· bots para Discord configurados pelo site.</span>
+      <a href="#projetos" class="announce__link">Ver projeto →</a>
     </div>
+    <button class="announce__close" aria-label="Fechar" id="announceClose">✕</button>
   </div>
+
+  <!-- Navegação -->
+  <header class="nav-wrap">
+    <nav class="nav">
+      <a href="#inicio" class="nav__brand"><img src="logo.svg" alt="" width="30" height="30"><span>Mauro <b>Souza</b></span></a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#inicio" class="active">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#stack">Tecnologias</a></li>
+        <li><a href="#formacao">Formação</a></li>
+        <li><a href="#contato" class="nav__cta">💬 Contato</a></li>
+      </ul>
+      <button class="nav__burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+    <a class="gh-btn" href="https://github.com/Maurooh" target="_blank" rel="noopener" aria-label="GitHub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+    </a>
+  </header>
+
+  <main id="inicio">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__in">
+        <div class="hero__text">
+          <span class="pill reveal"><i class="dot"></i>Desenvolvedor de Software · Campinas, SP</span>
+          <h1 class="reveal">Sites, bots e sistemas <span class="accent">que funcionam de verdade.</span></h1>
+          <p class="hero__sub reveal">Olá, eu sou o <b>Mauro Souza</b>. Faço do design ao deploy: lojas com pagamento e entrega automática, bots para Discord que se configuram pelo site, ferramentas web e assistentes com IA.</p>
+          <div class="hero__actions reveal">
+            <a href="#projetos" class="btn btn--primary btn--lg">🚀 Ver projetos <span>→</span></a>
+            <a href="#contato" class="btn btn--ghost btn--lg">💬 Falar comigo</a>
+          </div>
+          <ul class="hero__facts reveal">
+            <li><b>20+</b>projetos publicados</li>
+            <li><b>32</b>sistemas no Seu Bot Pronto</li>
+            <li><b>2+ anos</b>de experiência</li>
+            <li><b>2</b>formações em TI</li>
+          </ul>
+        </div>
+
+        <!-- Terminal com os projetos -->
+        <div class="term reveal" aria-label="Alguns projetos">
+          <div class="term__bar"><span></span><span></span><span></span><b>mauro@dev: ~/projetos</b></div>
+          <div class="term__body">
+            <div class="term__cmd"><i>$</i> ls ~/projetos --destaques</div>
+            <div class="term__row"><span class="term__ok">●</span><span>seu-bot-pronto</span><em>SaaS · Node.js</em></div>
+            <div class="term__row"><span class="term__ok">●</span><span>sexta-feira</span><em>IA · Electron</em></div>
+            <div class="term__row"><span class="term__ok">●</span><span>sua-informacao</span><em>dados públicos</em></div>
+            <div class="term__row"><span class="term__ok">●</span><span>minicord</span><em>chat · Supabase</em></div>
+            <div class="term__row"><span class="term__ok">●</span><span>bots-discord</span><em>6 bots</em></div>
+            <div class="term__row"><span class="term__ok">●</span><span>find-your-own</span><em>Next.js</em></div>
+            <div class="term__cmd"><i>$</i> npm test</div>
+            <div><span class="term__ok">✔</span> tudo passou <span class="term__cursor"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre -->
+    <section class="section container" id="sobre">
+      <div class="section__head reveal"><span class="eyebrow">Sobre mim</span><h2>Tecnologia que <span class="accent">resolve problema real</span></h2></div>
+      <div class="sobre">
+        <div class="sobre__texto reveal">
+          <p>Sou formado em <b>Análise e Desenvolvimento de Sistemas</b>, com pós-graduação em <b>Gestão da Tecnologia da Informação</b>. Trabalho com desenvolvimento web, bots para Discord, automações e integrações entre sistemas.</p>
+          <p>Gosto de fazer o produto inteiro: o site, o banco de dados, o pagamento, a hospedagem e o painel para quem usa mexer sozinho, <b>sem precisar saber programar</b>.</p>
+          <p>Cada projeto começa com uma pergunta simples: o que a pessoa que vai usar precisa encontrar aqui? A resposta guia o layout, os textos e cada funcionalidade.</p>
+        </div>
+        <div class="servicos">
+          <div class="servico reveal"><div class="servico__ic">🌐</div><b>Sites e sistemas web</b><p>Do backend à interface, rápidos, no celular e no computador.</p></div>
+          <div class="servico reveal"><div class="servico__ic">🤖</div><b>Bots para Discord</b><p>Tickets, moderação, ranking, VIP, vendas e painel web.</p></div>
+          <div class="servico reveal"><div class="servico__ic">🧠</div><b>IA e automações</b><p>Assistentes com IA e processos que economizam tempo.</p></div>
+          <div class="servico reveal"><div class="servico__ic">🔗</div><b>Integrações e APIs</b><p>Pagamentos, login com Discord, bancos de dados e APIs.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projetos -->
+    <section class="section container" id="projetos">
+      <div class="section__head reveal"><span class="eyebrow">Projetos</span><h2>O que eu <span class="accent">já fiz</span></h2><p>Dos trabalhos da faculdade a um SaaS completo no ar.</p></div>
+
+      <!-- Destaque -->
+      <article class="destaque reveal">
+        <div>
+          <span class="destaque__tag"><i class="dot"></i>Projeto principal · no ar</span>
+          <h3>Seu Bot Pronto</h3>
+          <p class="destaque__sub">Loja e plataforma de bots para Discord. O cliente escolhe os sistemas, coloca o nome e a foto do servidor e configura tudo pelo site. O bot fica hospedado e online 24h.</p>
+          <ul class="destaque__lista">
+            <li>Pagamento por Pix (Mercado Pago)</li>
+            <li>Entrega automática e licenças</li>
+            <li>Painel do cliente e painel admin</li>
+            <li>Afiliados, cupons e cashback</li>
+            <li>Mensalidade com aviso e renovação</li>
+            <li>Backup diário criptografado</li>
+            <li>Check-up grátis do servidor</li>
+            <li>Ferramentas grátis para servidores</li>
+          </ul>
+          <div class="destaque__acoes">
+            <a href="https://seubotpronto.com.br" target="_blank" rel="noopener" class="btn btn--primary">Ver o site <span>→</span></a>
+            <a href="https://seubotpronto.com.br/demo" target="_blank" rel="noopener" class="btn btn--ghost">👀 Ver o painel por dentro</a>
+          </div>
+        </div>
+        <div class="destaque__numeros">
+          <div class="numero"><b>32</b><span>sistemas para escolher</span></div>
+          <div class="numero"><b>24h</b><span>bots hospedados</span></div>
+          <div class="numero"><b>50</b><span>conjuntos de testes</span></div>
+          <div class="numero"><b>100%</b><span>configurado pelo site</span></div>
+          <div class="tags" style="grid-column: 1 / -1"><span>Node.js</span><span>Express</span><span>discord.js v14</span><span>SQLite</span><span>Mercado Pago</span></div>
+        </div>
+      </article>
+
+      <div class="filtros reveal" role="tablist" aria-label="Filtrar projetos">
+        <button class="filtro filtro--on" data-filtro="todos">Todos</button>
+        <button class="filtro" data-filtro="web">🌐 Web e SaaS</button>
+        <button class="filtro" data-filtro="discord">🤖 Bots</button>
+        <button class="filtro" data-filtro="ia">🧠 IA e desktop</button>
+        <button class="filtro" data-filtro="faculdade">🎓 Faculdade</button>
+      </div>
+
+      <div class="projetos" id="listaProjetos">
+        <article class="projeto projeto--largo reveal" data-cat="discord">
+          <div class="projeto__topo"><span class="projeto__ic">🤖</span><span class="projeto__ano">2025 – 2026</span></div>
+          <h3>Bots para Discord</h3><div class="projeto__cat">6 bots sob medida</div>
+          <p>Bots feitos para comunidades diferentes, quase todos configurados por menus ou por um painel no site, sem digitar nenhum ID. Tickets com transcript, VIP, ranking, moderação e IA aparecem em vários deles.</p>
+          <div class="bots">
+            <div class="bot"><b>🎛️ VoX</b><span>Bot completo com dashboard web: tickets, economia, VIP, calls temporárias, níveis e moderação.</span></div>
+            <div class="bot"><b>📡 Friday</b><span>Transmissão de tela só para quem está na mesma call. Saiu da call, a transmissão cai.</span></div>
+            <div class="bot"><b>🛍️ Clutch Store</b><span>Vitrine e vendas de bots, com cada produto rodando ao vivo para o cliente testar.</span></div>
+            <div class="bot"><b>🏘️ Bot Comunidade</b><span>Apresentações com imagem gerada na hora, feed de fotos, ranking, IA e quiz.</span></div>
+            <div class="bot"><b>🎯 Reyna e Clutch</b><span>Para Valorant: elo pela conta Riot e IA que responde no personagem.</span></div>
+            <div class="bot"><b>✉️ Bot 404</b><span>Correio anônimo, ranking de tempo em call, votações e aniversários.</span></div>
+          </div>
+          <div class="tags"><span>discord.js v14</span><span>Components V2</span><span>SQLite</span><span>Express</span><span>WebRTC</span><span>Canvas</span></div>
+        </article>
+        <article class="projeto reveal" data-cat="ia">
+          <div class="projeto__topo"><span class="projeto__ic">🎙️</span><span class="projeto__ano">2026</span></div>
+          <h3>Sexta-Feira</h3><div class="projeto__cat">Assistente de IA</div>
+          <p>Assistente pessoal de IA para Windows, com o Claude como cérebro. Fala com voz neural em português, tem memória, enxerga a tela, controla o PC e faz tarefas de várias etapas. 28 ferramentas e 408 testes.</p>
+          <div class="tags"><span>Node.js</span><span>Claude API</span><span>Electron</span><span>TTS</span></div>
+        </article>
+
+        <article class="projeto reveal" data-cat="web">
+          <div class="projeto__topo"><span class="projeto__ic">🔎</span><span class="projeto__ano">2026</span></div>
+          <h3>SuaInformação</h3><div class="projeto__cat">Portal de ferramentas</div>
+          <p>Ferramentas gratuitas com dados públicos oficiais: "Essa loja é confiável?" (CNPJ na Receita e idade do domínio), remédio de graça ou mais barato (Farmácia Popular e tabela CMED), calculadora de rescisão e mais.</p>
+          <div class="tags"><span>Node.js</span><span>APIs públicas</span><span>Testes em navegador</span></div>
+        </article>
+
+        <article class="projeto reveal" data-cat="web">
+          <div class="projeto__topo"><span class="projeto__ic">💬</span><span class="projeto__ano">2026</span></div>
+          <h3>MiniCord</h3><div class="projeto__cat">App de comunicação</div>
+          <p>Comunicação simples direto no navegador: chat em tempo real, amigos, espaços, chamadas com salas e compartilhamento de tela, temas e versão para celular. Feito em dupla.</p>
+          <div class="tags"><span>Node.js</span><span>Socket.IO</span><span>Supabase</span><span>Playwright</span></div>
+        </article>
+
+
+
+        <article class="projeto reveal" data-cat="web">
+          <div class="projeto__topo"><span class="projeto__ic">⚔️</span><span class="projeto__ano">2026</span></div>
+          <h3>Find Your Own</h3><div class="projeto__cat">App de gamificação</div>
+          <p>Desenvolvimento pessoal como um jogo: missões diárias e semanais dão XP e pontos em 5 atributos (Saúde, Conhecimento, Disciplina, Social e Finanças), com níveis, sequência diária e títulos.</p>
+          <div class="tags"><span>Next.js</span><span>TypeScript</span><span>Supabase</span><span>Tailwind</span></div>
+          <a class="projeto__link" href="https://github.com/Maurooh/FindYourOwn" target="_blank" rel="noopener">Ver no GitHub →</a>
+        </article>
+
+
+
+
+
+
+
+        <article class="projeto reveal" data-cat="faculdade">
+          <div class="projeto__topo"><span class="projeto__ic">🖥️</span><span class="projeto__ano">2024</span></div>
+          <h3>Desktop PIM</h3><div class="projeto__cat">Sistema desktop</div>
+          <p>Sistema de gerenciamento para Windows feito no PIM da faculdade, em grupo: login, área do usuário e área do administrador.</p>
+          <div class="tags"><span>C#</span><span>.NET</span><span>Windows Forms</span></div>
+        </article>
+
+        <article class="projeto reveal" data-cat="faculdade">
+          <div class="projeto__topo"><span class="projeto__ic">🌱</span><span class="projeto__ano">2024</span></div>
+          <h3>Fazenda Tech</h3><div class="projeto__cat">Site institucional</div>
+          <p>Site da Fazenda Tech com início, produtos, sobre e contato, servido por um backend em Node.js.</p>
+          <div class="tags"><span>Node.js</span><span>Express</span><span>HTML</span><span>CSS</span></div>
+          <a class="projeto__link" href="https://github.com/Maurooh/Website-Faculdade" target="_blank" rel="noopener">Ver no GitHub →</a>
+        </article>
+
+        <article class="projeto reveal" data-cat="faculdade">
+          <div class="projeto__topo"><span class="projeto__ic">📱</span><span class="projeto__ano">2024</span></div>
+          <h3>App mobile</h3><div class="projeto__cat">Aplicativo</div>
+          <p>Aplicativo multiplataforma feito na faculdade, para Android, iOS e web a partir do mesmo código.</p>
+          <div class="tags"><span>Flutter</span><span>Dart</span></div>
+          <a class="projeto__link" href="https://github.com/Maurooh/MobileAPP-Faculdade" target="_blank" rel="noopener">Ver no GitHub →</a>
+        </article>
+
+        <article class="projeto reveal" data-cat="faculdade">
+          <div class="projeto__topo"><span class="projeto__ic">☕</span><span class="projeto__ano">2024</span></div>
+          <h3>Loja em Java</h3><div class="projeto__cat">Orientação a objetos</div>
+          <p>Modelagem de uma loja com produtos, livros, games e caixa, usando herança e polimorfismo.</p>
+          <div class="tags"><span>Java</span><span>POO</span></div>
+          <a class="projeto__link" href="https://github.com/Maurooh/NP1---JAVA" target="_blank" rel="noopener">Ver no GitHub →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Tecnologias -->
+    <section class="section container" id="stack">
+      <div class="section__head reveal"><span class="eyebrow">Tecnologias</span><h2>Com o que eu <span class="accent">trabalho</span></h2></div>
+      <div class="stack">
+        <div class="stack__grupo reveal"><b>🌐 Front-end</b><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>TypeScript</span><span>Next.js</span><span>Tailwind</span></div></div>
+        <div class="stack__grupo reveal"><b>⚙️ Back-end</b><div class="tags"><span>Node.js</span><span>Express</span><span>Socket.IO</span><span>WebRTC</span><span>APIs REST</span><span>Python</span></div></div>
+        <div class="stack__grupo reveal"><b>🗄️ Dados e nuvem</b><div class="tags"><span>SQLite</span><span>PostgreSQL</span><span>Supabase</span><span>SQL</span><span>Discloud</span><span>Vercel</span></div></div>
+        <div class="stack__grupo reveal"><b>🧩 Outros</b><div class="tags"><span>discord.js</span><span>Claude API</span><span>Electron</span><span>Mercado Pago</span><span>C#</span><span>Java</span><span>Flutter</span><span>Git</span></div></div>
+      </div>
+    </section>
+
+    <!-- Formação -->
+    <section class="section container" id="formacao">
+      <div class="section__head reveal"><span class="eyebrow">Formação</span><h2>De onde eu <span class="accent">venho</span></h2></div>
+      <div class="linha">
+        <div class="etapa reveal"><small>Pós-graduação</small><b>Gestão da Tecnologia da Informação</b><p>Gestão estratégica de TI, governança e decisão baseada em dados.</p></div>
+        <div class="etapa reveal"><small>Graduação</small><b>Análise e Desenvolvimento de Sistemas</b><p>Desenvolvimento de software, estruturas de dados, banco de dados e engenharia de sistemas.</p></div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="section container" id="contato">
+      <div class="cta reveal">
+        <span class="eyebrow">Contato</span>
+        <h2>Vamos <span class="accent">conversar?</span></h2>
+        <p>Quer saber mais sobre algum projeto ou trocar uma ideia? É só me chamar.</p>
+        <div class="cta__acoes">
+          <a class="btn btn--primary btn--lg" href="https://wa.me/5519995567338" target="_blank" rel="noopener">💬 WhatsApp <span>→</span></a>
+          <a class="btn btn--ghost btn--lg" href="mailto:mauro.hsouza@hotmail.com">📧 E-mail</a>
+          <a class="btn btn--ghost btn--lg" href="https://github.com/Maurooh" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <p class="cta__info">(19) 99556-7338 · <button type="button" data-copiar="mauro.hsouza@hotmail.com">mauro.hsouza@hotmail.com</button></p>
+        <span class="copiado" id="copiado" aria-live="polite"></span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__in">
+      <span>© <span id="ano">2026</span> Mauro Souza · Campinas, SP</span>
+      <div class="footer__links">
+        <a href="#projetos">Projetos</a>
+        <a href="https://seubotpronto.com.br" target="_blank" rel="noopener">Seu Bot Pronto</a>
+        <a href="https://github.com/Maurooh" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://wa.me/5519995567338" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:mauro.hsouza@hotmail.com">E-mail</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão flutuante do WhatsApp -->
+  <a href="https://wa.me/5519995567338" target="_blank" rel="noopener" class="wpp" aria-label="Conversar no WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35ZM12.05 21.5h-.01a9.43 9.43 0 0 1-4.8-1.32l-.35-.2-3.57.93.96-3.48-.23-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.24-9.43 9.45-9.43a9.4 9.4 0 0 1 9.43 9.44c0 5.2-4.24 9.44-9.44 9.44Zm8.03-17.47A11.3 11.3 0 0 0 12.05.7C5.79.7.7 5.79.7 12.04c0 2 .52 3.95 1.52 5.67L.6 23.3l5.73-1.5a11.32 11.32 0 0 0 5.71 1.46h.01c6.25 0 11.34-5.09 11.34-11.34 0-3.03-1.18-5.88-3.31-8.02Z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
 </body>
 </html>
